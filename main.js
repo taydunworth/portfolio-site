@@ -1,56 +1,60 @@
+// Typing text effect on home page
+
 let typeEffect = function(el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 10) || 2000;
-  this.txt = '';
-  this.tick();
-  this.isDeleting = false;
-};
+  this.toRotate = toRotate
+  this.el = el
+  this.loopNum = 0
+  this.period = parseInt(period, 10) || 2000
+  this.txt = ''
+  this.tick()
+  this.isDeleting = false
+}
 
 typeEffect.prototype.tick = function() {
-  let i = this.loopNum % this.toRotate.length;
-  let fullTxt = this.toRotate[i];
+  let i = this.loopNum % this.toRotate.length
+  let fullTxt = this.toRotate[i]
 
   if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
+    this.txt = fullTxt.substring(0, this.txt.length - 1)
   } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
+    this.txt = fullTxt.substring(0, this.txt.length + 1)
   }
 
-  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+  this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>'
 
-  let that = this;
-  let delta = 150 - Math.random() * 100;
+  let that = this
+  let delta = 150 - Math.random() * 100
 
-  if (this.isDeleting) { delta /= 2; }
+  if (this.isDeleting) {
+    delta /= 2
+  }
 
   if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
+    delta = this.period
+    this.isDeleting = true
   } else if (this.isDeleting && this.txt === '') {
-    this.isDeleting = false;
-    this.loopNum++;
-    delta = 500;
+    this.isDeleting = false
+    this.loopNum++
+    delta = 500
   }
 
   setTimeout(function() {
-    that.tick();
-  }, delta);
-};
+    that.tick()
+  }, delta)
+}
 
 window.onload = function() {
-  let elements = document.getElementsByClassName('type-effect');
-  for (let i=0; i<elements.length; i++) {
-    let toRotate = elements[i].getAttribute('data-rotate');
-    let period = elements[i].getAttribute('data-period');
+  let elements = document.getElementsByClassName('type-effect')
+  for (let i = 0; i < elements.length; i++) {
+    let toRotate = elements[i].getAttribute('data-rotate')
+    let period = elements[i].getAttribute('data-period')
     if (toRotate) {
-      new typeEffect(elements[i], JSON.parse(toRotate), period);
+      new typeEffect(elements[i], JSON.parse(toRotate), period)
     }
   }
 
-  let css = document.createElement("style");
-  css.type = "text/css";
-  css.innerHTML = ".type-effect > .wrap { border-right: 0.08em solid #666 }";
-  document.body.appendChild(css);
-};
+  let css = document.createElement('style')
+  css.type = 'text/css'
+  css.innerHTML = '.type-effect > .wrap { border-right: 0.08em solid #666 }'
+  document.body.appendChild(css)
+}

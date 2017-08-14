@@ -65,13 +65,17 @@ a:visited {
   color: #fff;
   font-size: 4em;
   position: relative;
-  animation: masonry 1.5s ease-in-out;
+  animation: masonry 1s ease-in-out;
 }
 
 /* Navigation */
 
+div.home.header {
+  background-color: rgba(0,0,0,0);
+}
+
 .header {
-  background-color: #1c1c1c;
+  background-color: #16120c;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -199,21 +203,21 @@ nav li a:focus:after {
   column-count: 3;
   column-gap: 1em;
   position: relative;
-  animation: masonry 1.5s ease-in-out;
+  animation: masonry 1s ease-in-out;
 }
 
 .masonry-two {
   column-count: 2;
   column-gap: 1em;
   position: relative;
-  animation: masonry 1.5s ease-in-out;
+  animation: masonry 1s ease-in-out;
 }
 
 .masonry-flex {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  animation: masonry 1.5s ease-in-out;
+  animation: masonry 1s ease-in-out;
 }
 
 .masonry-flex .item {
@@ -222,11 +226,10 @@ nav li a:focus:after {
 }
 
 .item {
-  background-color: #eee;
   display: inline-block;
-  margin: 0 0 10px;
+  padding: 0;
   width: 100%;
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+  height: auto;
 }
 
 /* Item Info */
@@ -240,12 +243,18 @@ nav li a:focus:after {
   width: 30%;
 }
 
+.project-col .btn {
+  margin-bottom: 10px;
+  width: 70%;
+  text-align: center;
+}
+
 .summary-col {
   width: 50%;
 }
 
 #project-heading {
-  border-bottom: 3px solid #1c1c1c;
+  border-bottom: 3px solid #16120c;
   padding-bottom: 5px;
 }
 
@@ -259,7 +268,7 @@ nav li a:focus:after {
 }
 
 .btn {
-  background-color: #1c1c1c;
+  background-color: #16120c;
   padding: 15px;
   color: #fff;
   text-transform: uppercase;
@@ -314,7 +323,7 @@ nav li a:focus:after {
 
 .footer {
   width: 100%;
-  background-color: #1c1c1c;
+  background-color: #16120c;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -383,28 +392,18 @@ nav li a:focus:after {
 /* About */
 
 .about {
-  background-image: url('https://static.pexels.com/photos/265152/pexels-photo-265152.jpeg');
+  background-image: url('../assets/TaylorACox-Jumbotron.png');
   width: 100%;
-  height: 550px;
+  height: 100vh;
   background-attachment: fixed;
   background-position: top right;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  top: -185px;
+  top: -300px;
+  z-index: -1;
 }
 
-.about:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #000;
-  /*background-image: linear-gradient(to bottom right,#121212,#2288a3);*/
-  opacity: .6;
-}
 
 .about h1 {
   font-weight: 700;
@@ -449,7 +448,7 @@ nav li a:focus:after {
 }
 
 .scroller {
-  width: 100%;
+  width: 50%;
   z-index: 9999;
 }
 
@@ -551,17 +550,95 @@ nav li a:focus:after {
 .awards-certifications .right-col {
   width: 45%;
   border: none;
-  padding-bottom: 20px;
+  padding-bottom: 20px;,
+}
+
+/* Project Section */
+
+.portfolio {
+  position: relative;
+  top: -180px;
+  margin: 0px auto;
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.portfolio a {
+  color: inherit;
+}
+
+.portfolio h2 {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.portfolio p {
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.portfolio h6 {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.portfolio-item {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background: rgba(0,0,0,.4);
+}
+
+.portfolio-item:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  width: 80%;
+  font-size: 1.3em;;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+/* About */
+
+.full-about {
+  width: 80%;
+  margin: 0px auto;
+  padding-bottom: 50px;
+}
+
+.full-about h2 {
+  text-align: center;
 }
 
 /* Animations */
 
 @keyframes masonry {
   0% {
-    position: relative;
-    top: -1000px;
+    opacity: 0;
   }
   100% {
-    top: 0px;
+    opacity: 1;
   }
 }
