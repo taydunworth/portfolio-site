@@ -1,10 +1,11 @@
+/* DEFAULT MOBILE STYLES */
 /* General */
-
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700');
 
 body {
   margin: 0;
   font-family: 'Fira Sans', Helvetica, sans-serif;
+  animation: masonry 1s ease-in-out;
 }
 
 .wrapper {
@@ -65,11 +66,9 @@ a:visited {
   color: #fff;
   font-size: 4em;
   position: relative;
-  animation: masonry 1s ease-in-out;
 }
 
 /* Navigation */
-
 div.home.header {
   background-color: rgba(0,0,0,0);
 }
@@ -82,6 +81,7 @@ div.home.header {
   align-items: flex-start;
   height: 300px;
   flex-wrap: wrap;
+  animation: masonry 1s ease-in-out;
 }
 
 .nav-container {
@@ -191,7 +191,6 @@ nav li a:focus:after {
 }
 
 /* Masonry */
-
 .images-container {
   width: 100%;
   display: flex;
@@ -200,57 +199,55 @@ nav li a:focus:after {
 }
 
 .masonry {
-  column-count: 3;
+  column-count: 1;
   column-gap: 1em;
   position: relative;
-  animation: masonry 1s ease-in-out;
 }
 
 .masonry-two {
-  column-count: 2;
+  column-count: 1;
   column-gap: 1em;
   position: relative;
-  animation: masonry 1s ease-in-out;
 }
 
 .masonry-flex {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-  animation: masonry 1s ease-in-out;
 }
 
 .masonry-flex .item {
-  width: 48%;
-  height: 48%;
+  width: 100%;
+  height: 100%;
 }
 
 .item {
   display: inline-block;
-  padding: 0;
+  padding: 0 0 10px 0;
   width: 100%;
   height: auto;
 }
 
 /* Item Info */
-
 .info-row {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 
 .project-col {
-  width: 30%;
+  width: 100%;
 }
 
 .project-col .btn {
   margin-bottom: 10px;
-  width: 70%;
+  width: 100%;
   text-align: center;
 }
 
 .summary-col {
-  width: 50%;
+  width: 100%;
 }
 
 #project-heading {
@@ -259,12 +256,11 @@ nav li a:focus:after {
 }
 
 /* Buttons */
-
 .buttons-row {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding-top: 40px;
 }
 
 .btn {
@@ -275,6 +271,7 @@ nav li a:focus:after {
   font-weight: 300;
   letter-spacing: 3px;
   text-decoration: none;
+  margin: 50px 0 10px;
 }
 
 .btn:visited {
@@ -283,6 +280,10 @@ nav li a:focus:after {
 
 .btn:hover {
   cursor: pointer;
+}
+
+.project-col .btn {
+  margin: 20px 0 40px;
 }
 
 .hvr-underline-reveal {
@@ -320,7 +321,6 @@ nav li a:focus:after {
 }
 
 /* Footer */
-
 .footer {
   width: 100%;
   background-color: #16120c;
@@ -331,11 +331,13 @@ nav li a:focus:after {
 }
 
 .footer-main {
-  width: 80%;
+  width: 100%;
   padding: 20px 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  text-align: center;
 }
 
 .footer-logo {
@@ -350,6 +352,7 @@ nav li a:focus:after {
 
 .footer-main nav ul {
   padding: 0;
+  flex-direction: column;
 }
 
 .footer-secondary {
@@ -359,21 +362,23 @@ nav li a:focus:after {
 
 .footer-secondary-info {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 80%;
   margin: 0px auto;
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 .social-icons {
-  width: 30%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
 .social-icons .fa {
   font-size: 1.3em;
+  padding: 10px;
   color: #fff;
 }
 
@@ -390,7 +395,6 @@ nav li a:focus:after {
 }
 
 /* About */
-
 .about {
   background-image: url('../assets/TaylorACox-Jumbotron.png');
   width: 100%;
@@ -405,16 +409,28 @@ nav li a:focus:after {
 }
 
 
+ .about:before {
+   content: '';
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background-color: #000;
+   opacity: .6;
+ }
+
 .about h1 {
   font-weight: 700;
   text-transform: none;
-  font-size: 4em;
+  font-size: 3em;
   color: #fff;
   padding: 100px 0 100px 50px;
 }
 
 .languages {
   display: flex;
+  flex-direction: column;
   width: 90%;
   justify-content: space-between;
   align-items: center;
@@ -423,22 +439,22 @@ nav li a:focus:after {
 }
 
 .languages h2 {
-  border-right: 1px solid #121212;
-  padding: 20px 0;
-  margin-right: 40px;
-  width: 30%;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
 }
 
 .language-images {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  width: 70%;
+  width: 100%;
 }
 
 .languages img {
-  height: 10%;
-  width: 10%;
+  height: 25%;
+  width: 25%;
 }
 
 .about {
@@ -448,12 +464,11 @@ nav li a:focus:after {
 }
 
 .scroller {
-  width: 50%;
+  width: 80%;
   z-index: 9999;
 }
 
 /* Resume */
-
 .resume {
   background-color: #fff;
   display: flex;
@@ -493,7 +508,7 @@ nav li a:focus:after {
 }
 
 .profile p {
-  width: 50%;
+  width: 80%;
   margin: 0px auto;
   text-align: justify;
   padding-bottom: 30px;
@@ -502,8 +517,7 @@ nav li a:focus:after {
 .left-col {
   display: flex;
   flex-direction: column;
-  width: 30%;
-  border-right: 1px solid #000;
+  width: 100%;
 }
 
 .experience li {
@@ -532,7 +546,7 @@ nav li a:focus:after {
 .right-col {
   display: flex;
   flex-direction: column;
-  width: 69%;
+  width: 100%;
 }
 
 .awards-certifications {
@@ -540,6 +554,7 @@ nav li a:focus:after {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding-top: 20px;
 }
 
 .awards-certifications h2 {
@@ -548,13 +563,12 @@ nav li a:focus:after {
 
 .awards-certifications .left-col,
 .awards-certifications .right-col {
-  width: 45%;
+  width: 100%;
   border: none;
   padding-bottom: 20px;,
 }
 
 /* Project Section */
-
 .portfolio {
   position: relative;
   top: -180px;
@@ -598,7 +612,7 @@ nav li a:focus:after {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100%;
+  height: calc(100% - 15px);
   width: 100%;
   opacity: 0;
   transition: .5s ease;
@@ -621,7 +635,6 @@ nav li a:focus:after {
 }
 
 /* About */
-
 .full-about {
   width: 80%;
   margin: 0px auto;
@@ -633,12 +646,124 @@ nav li a:focus:after {
 }
 
 /* Animations */
-
 @keyframes masonry {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+
+/* TABLET STYLES */
+@media ( min-width: 600px ) {
+  /* General */
+  .masonry {
+    column-count: 2;
+  }
+
+  .masonry-two {
+    column-count: 2;
+  }
+
+  .buttons-row {
+    flex-direction: row;
+  }
+
+  .masonry-flex .item {
+    width: 48%;
+    height: 48%;
+  }
+
+  .languages {
+    flex-direction: row;
+  }
+
+  .languages h2 {
+    border-right: 1px solid #121212;
+    margin-right: 40px;
+    width: 30%;
+    text-align: left;
+  }
+
+  .languages img {
+    height: 10%;
+    width: 10%;
+  }
+  .footer-secondary-info {
+    flex-direction: row;
+  }
+
+  .social-icons {
+    width: 30%;
+  }
+
+  .footer-main {
+    width: 80%;
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .footer-main nav ul {
+    padding: 0;
+    flex-direction: row;
+  }
+
+  .about h1 {
+    font-size: 4em;
+  }
+
+  .scroller {
+    width: 50%;
+  }
+
+  .about:before {
+    background-color: transparent;
+  }
+
+  .profile p {
+    width: 50%;
+  }
+}
+
+/* DESKTOP STYLES */
+@media ( min-width: 1000px ) {
+  /* General */
+  .masonry {
+    column-count: 3;
+  }
+
+  .info-row {
+    flex-direction: row;
+  }
+
+  .project-col {
+    width: 30%;
+  }
+
+  .project-col .btn {
+    margin-bottom: 10px;
+    width: 70%;
+    text-align: center;
+  }
+
+  .summary-col {
+    width: 50%;
+  }
+
+  .left-col {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    border-right: 1px solid #000;
+  }
+
+  .right-col {
+    width: 69%;
+  }
+
+  .awards-certifications .left-col,
+  .awards-certifications .right-col {
+    width: 45%;
   }
 }
