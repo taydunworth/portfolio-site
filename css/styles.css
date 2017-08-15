@@ -6,6 +6,11 @@ body {
   margin: 0;
   font-family: 'Fira Sans', Helvetica, sans-serif;
   animation: masonry 1s ease-in-out;
+  font-weight: 300;
+}
+
+strong {
+  font-weight: 400;
 }
 
 .wrapper {
@@ -16,9 +21,8 @@ body {
   width: 80%;
   display: flex;
   flex-direction: column;
-  position: relative;
-  top: -150px;
   margin: 0px auto;
+  padding: 30px 0;
 }
 
 .item-info {
@@ -73,13 +77,42 @@ div.home.header {
   background-color: rgba(0,0,0,0);
 }
 
+header {
+  background-image: url('../assets/TaylorACox-Jumbotron.png');
+  width: 100%;
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+header:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  opacity: .6;
+}
+
+.mobile-nav {
+  display: block;
+  color: #fff;
+  font-size: 3em;
+  padding: 20px;
+  cursor: pointer;
+}
+
 .header {
   background-color: #16120c;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  height: 300px;
   flex-wrap: wrap;
   animation: masonry 1s ease-in-out;
 }
@@ -92,17 +125,22 @@ div.home.header {
 }
 
 .logo-container {
-  width: 30%;
+  width: 40%;
 }
 
 .logo {
-  width: 40%;
+  width: 80%;
   padding: 20px;
   cursor: pointer;
 }
 
+.logo-mobile {
+  display: none;
+}
+
 nav {
   width: 70%;
+  display: none;
 }
 
 nav ul {
@@ -201,13 +239,11 @@ nav li a:focus:after {
 .masonry {
   column-count: 1;
   column-gap: 1em;
-  position: relative;
 }
 
 .masonry-two {
   column-count: 1;
   column-gap: 1em;
-  position: relative;
 }
 
 .masonry-flex {
@@ -395,30 +431,6 @@ nav li a:focus:after {
 }
 
 /* About */
-.about {
-  background-image: url('../assets/TaylorACox-Jumbotron.png');
-  width: 100%;
-  height: 100vh;
-  background-attachment: fixed;
-  background-position: top right;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  top: -300px;
-  z-index: -1;
-}
-
-
- .about:before {
-   content: '';
-   position: absolute;
-   top: 0;
-   right: 0;
-   bottom: 0;
-   left: 0;
-   background-color: #000;
-   opacity: .6;
- }
 
 .about h1 {
   font-weight: 700;
@@ -455,6 +467,13 @@ nav li a:focus:after {
 .languages img {
   height: 25%;
   width: 25%;
+}
+
+.current {
+  text-align: center;
+  font-style: italic;
+  margin: 0px auto;
+  padding: 0 0 20px 0;
 }
 
 .about {
@@ -570,8 +589,6 @@ nav li a:focus:after {
 
 /* Project Section */
 .portfolio {
-  position: relative;
-  top: -180px;
   margin: 0px auto;
   display: flex;
   width: 80%;
@@ -628,10 +645,21 @@ nav li a:focus:after {
   width: 80%;
   font-size: 1.3em;;
   position: absolute;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-align: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+  padding: 3px;
+}
+
+.text span {
+  font-size: .8em;
+  display: block;
+  font-weight: 300;
 }
 
 /* About */
@@ -641,8 +669,11 @@ nav li a:focus:after {
   padding-bottom: 50px;
 }
 
-.full-about h2 {
+.full-about h2, .portfolio h2 {
   text-align: center;
+  font-size: 3em;
+  letter-spacing: 6px;
+  padding-bottom: 10px;
 }
 
 /* Animations */
@@ -658,6 +689,9 @@ nav li a:focus:after {
 /* TABLET STYLES */
 @media ( min-width: 600px ) {
   /* General */
+  .logo-container {
+    width: 30%;
+  }
   .masonry {
     column-count: 2;
   }
@@ -690,6 +724,7 @@ nav li a:focus:after {
     height: 10%;
     width: 10%;
   }
+
   .footer-secondary-info {
     flex-direction: row;
   }
@@ -717,11 +752,15 @@ nav li a:focus:after {
     width: 50%;
   }
 
-  .about:before {
+  header:before {
     background-color: transparent;
   }
 
   .profile p {
+    width: 50%;
+  }
+
+  .logo {
     width: 50%;
   }
 }
@@ -748,7 +787,7 @@ nav li a:focus:after {
   }
 
   .summary-col {
-    width: 50%;
+    width: 60%;
   }
 
   .left-col {
@@ -765,5 +804,17 @@ nav li a:focus:after {
   .awards-certifications .left-col,
   .awards-certifications .right-col {
     width: 45%;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  nav {
+    display: block;
+  }
+
+  .logo {
+    width: 40%;
   }
 }

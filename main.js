@@ -1,3 +1,5 @@
+
+
 // Typing text effect on home page
 
 let typeEffect = function(el, toRotate, period) {
