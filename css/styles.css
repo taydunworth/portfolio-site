@@ -101,7 +101,9 @@ nav {
 }
 
 div.home.nav-wrapper {
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  z-index: 3;
 }
 
 nav ul {
@@ -232,7 +234,7 @@ nav li a:hover:after, nav li a:focus:after {
 /*---Jumbotron---*/
 
 header {
-  background-image: url('../assets/tayloracox-jumbotron-collage.jpg');
+  background-image: url('../assets/TaylorACox-Jumbotron-Background.jpg');
   width: 100%;
   height: 100vh;
   background-attachment: fixed;
@@ -249,7 +251,7 @@ header:before {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .jumbotron {
@@ -257,6 +259,9 @@ header:before {
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .jumbotron h1 {
@@ -264,7 +269,6 @@ header:before {
   text-transform: none;
   font-size: 3em;
   color: #000;
-  padding: 200px 0;
 }
 
 .scroller {
