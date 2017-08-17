@@ -1,6 +1,9 @@
 /* Default Mobile Styles */
 /*---General---*/
+
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700');
+
+
 
 body {
   font-family: 'Fira Sans', Helvetica, sans-serif;
@@ -412,21 +415,31 @@ header:before {
 
 /*---Portfolio---*/
 
-section {
-  padding: 15px 0 0 0;
+.portfolio {
+  padding: 60px;
   margin: 0px auto;
   display: flex;
-  width: 100%;
+  width: 80%;
   justify-content: space-between;
   flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+}
+
+#gitBtn {
+  margin: 0px auto;
+  display: block;
 }
 
 section h2 {
   width: 100%;
-  padding-bottom: 25px;
-  text-align: center;
   font-size: 3em;
   letter-spacing: 6px;
+}
+
+.portfolio img {
+  width: 70%;
+  height: auto;
 }
 
 section a {
@@ -442,10 +455,11 @@ section h6 {
 }
 
 .portfolio-item {
-  position: relative;
+  width: 50%;
+  padding-bottom: 40px;
 }
 
-.overlay {
+/*.overlay {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -460,7 +474,7 @@ section h6 {
 
 .portfolio-item:hover .overlay {
   opacity: 1;
-}
+}*/
 
 .text {
   color: #000;
@@ -601,13 +615,6 @@ section h6 {
   color: #000;
 }
 
-.resume .logo {
-  width: 20%;
-  height: 20%;;
-  margin: 0px auto;
-  padding: 30px 0;
-}
-
 .profile, .awards-certifications h2 {
   width: 100%;
 }
@@ -731,6 +738,7 @@ section h6 {
 /* Tablet Styles */
 
 @media ( min-width: 600px ) {
+
   .about .right img {
     width: 70%;
   }
@@ -808,7 +816,7 @@ section h6 {
 
 /* Desktop Styles */
 
-@media ( min-width: 1000px ) {
+@media ( min-width: 800px )  {
   .about-wrapper {
     flex-direction: row;
     align-items: center;
@@ -860,6 +868,11 @@ section h6 {
 
   nav {
     display: block;
+  }
+
+  .portfolio-item {
+    width: 20%;
+    padding-bottom: 40px;
   }
 
   .project-col {
