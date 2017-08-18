@@ -248,11 +248,11 @@ header {
   background-attachment: fixed;
   background-position: top right;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
   z-index: 0;
 }
 
-header:before {
+/*header:before {
   content: '';
   position: absolute;
   top: 0;
@@ -260,7 +260,7 @@ header:before {
   bottom: 0;
   left: 0;
   background-color: rgba(255, 255, 255, 0.3);
-}
+}*/
 
 .jumbotron {
   display: flex;
@@ -772,6 +772,10 @@ section h6 {
 
   .footer-secondary-info {
     flex-direction: row;
+  }
+
+  header {
+    background-size: cover;
   }
 
   .jumbotron h1 {
