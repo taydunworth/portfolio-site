@@ -629,15 +629,8 @@ section h6 {
   color: #000;
 }
 
-.profile, .awards-certifications h2 {
+.awards-certifications h2 {
   width: 100%;
-}
-
-.profile p {
-  width: 80%;
-  margin: 0px auto;
-  text-align: justify;
-  padding-bottom: 30px;
 }
 
 .left-col {
@@ -817,10 +810,6 @@ section h6 {
 
   .masonry-two {
     column-count: 2;
-  }
-
-  .profile p {
-    width: 50%;
   }
 
   .scroller {
