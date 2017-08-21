@@ -629,6 +629,11 @@ section h6 {
   color: #000;
 }
 
+.btn.resume {
+  width: auto;
+  margin: 0px auto;
+}
+
 .awards-certifications h2 {
   width: 100%;
 }
